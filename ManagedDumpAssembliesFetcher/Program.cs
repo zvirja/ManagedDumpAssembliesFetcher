@@ -44,7 +44,7 @@ namespace ManagedDumpAssembliesFetcher
 
             var fileName = Path.GetFileName(module.FileName);
 
-            if (!taskInfo.DoNotSkipNetAssemblies && module.Name.StartsWith("C:\\Windows\\Microsoft.Net", StringComparison.OrdinalIgnoreCase))
+            if (!taskInfo.DoNotSkipNetAssemblies && module.Name.StartsWith("C:\\Windows\\Microsoft.Net\\assembly\\gac_", StringComparison.OrdinalIgnoreCase))
             {
               WriteConsoleColored(ConsoleColor.DarkGray, $"Skipped: {fileName}");
 
