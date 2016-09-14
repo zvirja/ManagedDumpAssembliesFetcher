@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using Microsoft.Diagnostics.Runtime;
 
 namespace ManagedDumpAssembliesFetcher
@@ -14,7 +15,7 @@ namespace ManagedDumpAssembliesFetcher
       var taskInfo = ReadTaskInfo(args);
       if (taskInfo == null) return;
 
-      WriteConsoleColored(ConsoleColor.DarkCyan, "Managed Dump Assemblies Fetcher\nWritten by Alex Povar.\n");
+      WriteConsoleColored(ConsoleColor.DarkCyan, $"Managed Dump Assemblies Fetcher v{Assembly.GetExecutingAssembly().GetName().Version.ToString(2)}\nWritten by Alex Povar\n");
       Console.WriteLine();
 
       try
